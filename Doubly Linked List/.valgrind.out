@@ -1,0 +1,48 @@
+==30431== Memcheck, a memory error detector
+==30431== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==30431== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==30431== Command: /rhome/d/dkopic1/workspace/ASP/Z1/Z1/.runme
+==30431== Parent PID: 30412
+==30431== 
+==30431== Conditional jump or move depends on uninitialised value(s)
+==30431==    at 0x10A62C: DvostrukaLista<int>::prethodni() (main.cpp:133)
+==30431==    by 0x109F73: testKopKonstIOperatorDodjele() (main.cpp:364)
+==30431==    by 0x10A09A: main (main.cpp:375)
+==30431== 
+==30431== Use of uninitialised value of size 8
+==30431==    at 0x10A63D: DvostrukaLista<int>::prethodni() (main.cpp:134)
+==30431==    by 0x109F73: testKopKonstIOperatorDodjele() (main.cpp:364)
+==30431==    by 0x10A09A: main (main.cpp:375)
+==30431== 
+==30431== Invalid read of size 4
+==30431==    at 0x109F80: testKopKonstIOperatorDodjele() (main.cpp:365)
+==30431==    by 0x10A09A: main (main.cpp:375)
+==30431==  Address 0x1bf0000ffff is not stack'd, malloc'd or (recently) free'd
+==30431== 
+==30431== 
+==30431== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==30431==  Access not within mapped region at address 0x1BF0000FFFF
+==30431==    at 0x109F80: testKopKonstIOperatorDodjele() (main.cpp:365)
+==30431==    by 0x10A09A: main (main.cpp:375)
+==30431==  If you believe this happened as a result of a stack
+==30431==  overflow in your program's main thread (unlikely but
+==30431==  possible), you can try to increase the size of the
+==30431==  main thread stack using the --main-stacksize= flag.
+==30431==  The main thread stack size used in this run was 8388608.
+==30431== 
+==30431== HEAP SUMMARY:
+==30431==     in use at exit: 240 bytes in 10 blocks
+==30431==   total heap usage: 11 allocs, 1 frees, 72,944 bytes allocated
+==30431== 
+==30431== LEAK SUMMARY:
+==30431==    definitely lost: 0 bytes in 0 blocks
+==30431==    indirectly lost: 0 bytes in 0 blocks
+==30431==      possibly lost: 0 bytes in 0 blocks
+==30431==    still reachable: 240 bytes in 10 blocks
+==30431==         suppressed: 0 bytes in 0 blocks
+==30431== Reachable blocks (those to which a pointer was found) are not shown.
+==30431== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==30431== 
+==30431== For counts of detected and suppressed errors, rerun with: -v
+==30431== Use --track-origins=yes to see where uninitialised values come from
+==30431== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
